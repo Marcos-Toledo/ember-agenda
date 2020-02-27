@@ -1,5 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  nome: 'Marcos'
+  pessoa: Ember.Object.create({
+    nome: 'Marcos',
+    sobrenome: 'Toledo'
+  })
 });
