@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('lista', {path: '/'});
   this.route('pessoa', {path: 'pessoa/:id'});
+  this.route('nova');
 });
 
 export default Router;

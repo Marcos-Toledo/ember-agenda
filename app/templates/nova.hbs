@@ -1,0 +1,6 @@
+<label for="nome">Nome</label>
+{{input id="nome" value=model.nome action='salvarAoPressionarEnter' on='enter'}}
+<br>
+<br>
+
+<button id="salvar" {{action 'salvar' model}}>Salvar</button>

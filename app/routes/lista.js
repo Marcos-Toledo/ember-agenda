@@ -14,5 +14,11 @@ export default Ember.Route.extend({
     return this.get('pessoas').filter((pessoa) => {
       return Ember.isEmpty(params.nome) || pessoa.nome.indexOf(params.nome) >= 0;
     });
+  },
+
+  actions: {
+    nova() {
+      this.transitionTo('nova');
+    }
   }
 });
