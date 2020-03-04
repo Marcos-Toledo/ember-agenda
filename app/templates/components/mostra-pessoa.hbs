@@ -1,3 +1,12 @@
 {{yield}}
 
-nome: {{pessoa.nome}} - {{pessoa.sobrenome}}
+<p>
+  Nome: {{pessoa.nome}} - {{pessoa.sobrenome}}
+</p>
+
+<br>
+
+<p>Telefones:</p>
+{{#each pessoa.telefones as |telefone|}}
+<p>({{telefone.prefixo}}) {{telefone.numero}}</p>
+{{/each}}
