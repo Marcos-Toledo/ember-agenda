@@ -1,10 +1,10 @@
 {{yield}}
 
-<p>
-  Nome: {{pessoa.nome}} - {{pessoa.sobrenome}}
-</p>
+<p>Nome: {{pessoa.nome}} - {{pessoa.sobrenome}}</p><br>
 
-<br>
+{{#if pessoa.nascidoEm}}
+<p>Aniversário: {{formata-data pessoa.nascidoEm}}</p><br>
+{{/if}}
 
 <p>Telefones:</p>
 {{#each pessoa.telefones as |telefone|}}
