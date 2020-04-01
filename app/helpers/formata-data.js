@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
-export function formataData(params/*, hash*/) {
-  let [nascidoEm] = params;
-  let dia = nascidoEm.getDate();
-  let mes = nascidoEm.getMonth() +1;
-  let ano = nascidoEm.getFullYear();
-  return `${dia}/${mes}/${ano}`;
-}
+export default Ember.Helper.extend({
+	meses: Ember.inject.service('meses'),
 
-export default Ember.Helper.helper(formataData);
+	compute(params/*, hash*/) {
+	  let [nascidoEm] = params;
+	  let dia = nascidoEm.getDate();
+	  let mes = this.get('meses').getPorExtenso(nascidoEm.getMonth());
+	  let ano = nascidoEm.getFullYear();
+	  return `${dia}/${mes}/${ano}`;
+	}
+});
